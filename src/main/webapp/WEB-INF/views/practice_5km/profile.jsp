@@ -18,7 +18,7 @@
 		<c:out value="${league.history}"></c:out>
 	</pre>
 	<form
-		action="${pageContext.request.contextPath}/baseballLeague/teamList"
+		action="${pageContext.request.contextPath}/baseballLeague/practice_5km/teamList"
 		method="post">
 		<input type="submit" value="戻る">
 		<%-- 	<a href="${pageContext.request.contextPath}/baseballLeague/teamList">戻る</a> --%>

@@ -11,7 +11,8 @@ import com.example.demo.domain.Hotel;
 import com.example.demo.repository.HotelRepository;
 
 /**
- * 受け取ったpriceをrequestスコープに入れるコントローラ
+ * 受け取ったpriceで絞り込んだ情報を受け取り、
+ * requestスコープに入れるコントローラ.
  * 
  * @author kento.taira
  *
@@ -24,18 +25,22 @@ public class HotelController {
 	private HotelRepository repository;
 
 	/**
-	 * 初期画面表示
+	 * 初期画面表示.
 	 * 
 	 * @return 初期画面
 	 */
-	@RequestMapping("/search")
-	public String search() {
-		return "search";
+	@RequestMapping("/index")
+	public String index() {
+		return "practice_10km/index";
 	}
 
 	/**
-	 * 入力されたpriceを受け取り、その情報を元にfindByPrice()する
-	 * findByPrice()した情報（一泊料金price円以下のホテル情報）をrequestスコープに入れて出力画面に返す
+	 * 入力された値段以下のホテル情報を出力する.
+	 * ↑↑わかりやすい
+	 * 
+	 * ↓↓わかりにくい
+	 * 入力されたpriceを受け取り、その情報を元にfindByPrice()する.
+	 * findByPrice()した情報（一泊料金price円以下のホテル情報）をrequestスコープに入れて出力画面に返す.
 	 * 
 	 * @param model
 	 *            モデル
@@ -43,13 +48,13 @@ public class HotelController {
 	 *            金額
 	 * @return 出力画面
 	 */
-	@RequestMapping("/result")
-	public String result(Model model, Integer price) {
+	@RequestMapping("/search")
+	public String search(Model model, Integer price) {
 
-		List<Hotel> hotelList = repository.findByPrice(price);
+		List<Hotel> hotelList = repository.findUnderPrice(price);
 		model.addAttribute("hotels", hotelList);
 
-		return "search";
+		return "practice_10km/index";
 	}
 
 }

@@ -59,7 +59,7 @@ public class BaseballRepository {
 	 */
 	public League load(Integer id) {
 		// System.out.println("id="+id);
-		String sql = "select id, league_name, team_name, headquarters, " + "inauguration, history from " + TABLE_NAME
+		String sql = "select id, league_name, team_name, headquarters, inauguration, history from " + TABLE_NAME
 				+ " where id = :id;";
 		SqlParameterSource param = new MapSqlParameterSource("id", id);
 		League league = template.queryForObject(sql, param, LEAGUELIST_ROW_MAPPER);

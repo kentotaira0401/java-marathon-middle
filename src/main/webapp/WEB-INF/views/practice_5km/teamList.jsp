@@ -18,7 +18,7 @@
 	<ul>
 		<c:forEach var="league" items="${leagues}">
 			<li><a
-				href="${pageContext.request.contextPath}/baseballLeague/load?id=${league.id}">
+				href="${pageContext.request.contextPath}/baseballLeague/load?id=<c:out value="${league.id}" />">
 					<c:out value="${league.teamName}" />
 			</a></li>
 		</c:forEach>

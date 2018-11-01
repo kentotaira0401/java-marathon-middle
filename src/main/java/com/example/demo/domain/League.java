@@ -1,7 +1,7 @@
 package com.example.demo.domain;
 
 /**
- * 野球チームの情報を表すドメイン
+ * 野球チームの情報を表すドメイン.
  * 
  * @author kento.taira
  *

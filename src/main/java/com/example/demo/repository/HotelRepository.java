@@ -45,7 +45,7 @@ public class HotelRepository {
 	 *            価格
 	 * @return 検索されたホテル情報List
 	 */
-	public List<Hotel> findByPrice(Integer price) {
+	public List<Hotel> findUnderPrice(Integer price) {
 
 		String sql = "select id, hotel_name, nearest_station, price from " + TABLE_NAME
 				+ " where price <= :price order by price;";

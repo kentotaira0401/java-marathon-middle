@@ -17,7 +17,7 @@
 
 	</table>
 
-	<form action="${pageContext.request.contextPath}/hotel/result" method="post">
+	<form action="${pageContext.request.contextPath}/hotel/search" method="post">
 		一泊料金<input type="text" name="price">円以下<br> 
 		<input type="submit" value="検索">
 	</form>

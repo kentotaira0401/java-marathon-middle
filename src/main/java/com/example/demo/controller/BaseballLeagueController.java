@@ -33,7 +33,7 @@ public class BaseballLeagueController {
 	public String teamList(Model model) {
 		List<League> list = repository.findAll();
 		model.addAttribute("leagues", list);
-		return "teamList";
+		return "practice_5km/teamList";
 	}
 	// private HttpResource application;
 
@@ -55,7 +55,7 @@ public class BaseballLeagueController {
 		League league = repository.load(id);
 		model.addAttribute("league", league);
 
-		return "profile";
+		return "practice_5km/profile";
 
 	}
 
