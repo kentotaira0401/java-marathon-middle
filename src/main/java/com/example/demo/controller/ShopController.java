@@ -68,7 +68,9 @@ public class ShopController {
 		String color = form.getColor();
 		List<Shop> shopList = repository.search(gender, color);
 		model.addAttribute("shops",shopList);
-		return index(model);
+		
+		String returnValue = index(model);
+		return returnValue;
 	}
 	
 	
